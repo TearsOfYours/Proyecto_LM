@@ -25,3 +25,7 @@ Aún falta por desarrollar las características de los media query y el orden de
 Joaquín: Sé a corregido el movimiento del carrusel, ahora se mueve automáticamente cada 20 segundos con una animación de deslizamiento. Además, se ha ajustado la distribución de las categorías y se ha mejorado la representación de la clasificación por edades. Se ha corregido la posición y distribución del nav2. También se ha añadido de manera provisional un icono arriba a la izquierda para ver como quedaría y ver si sería buena idea implementarlo en un futuro.
 
 Ha sido implementado las características del Modelo normal (Media Query), este falta retocar algunas de sus características, pero está ya en una fase funcional. El modelo compacto y el modelo mediano están a la espera de iniciar su implementación inicial.
+
+15/02/25
+(En rama test_media_query)
+En estos últimos días, tanto Gerardas, como yo, Joaquín, hemos estado solucionando problemas con los media query, actualmente están solucionados y he implementado hace relativamente unos ajustes en las imágenes para poder pasar a la creación e implementación de la página detalles. En la cual se podrá ver la información de cada película, apartado de comentarios y demás. Hemos visto que para hacer que una página sea dinámica y pueda mostrar varias opciones en diferentes casos, necesitaremos el uso de JavaScript, por el momento está descartada esta opción y priorizaremos el uso de diferentes páginas de detalles para poder hacerlo más simple y con conocimientos que poseemos.
