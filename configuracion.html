@@ -5,46 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link rel="stylesheet" href="./css/stylesheet_profile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/stylesheet_profile.css">
 </head>
 
 <body class="borde">
-    <header class="flex_head">
-        <div class="cabecera_estilo">
-            <nav class="nav1">
+        <!-- Cabecera con el titulo -->
+    <header class="flex">
+        <div class="nav_space">
+            <div class="cabecera">
+                <p>My AnimePage</p>
+            </div>
+        </div>
+    </header>
+    <main class="main_estilo">
+        <form> 
+            <!-- Esto es un formulario de Bootstrap -->
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Direccion de correo</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Recordar los datos?</label>
+            </div>
+            <a href="./index.html"><button type="button" class="btn btn-primary">Enviar</button></a>
+        </form>
+    </main>
+    <!-- Pie de página -->
+    <footer class="flex">
+        <div class="footer_space">
+            <nav class="pie">
                 <input type="button" value="Preguntas Frecuentes" class="boton">
                 <input type="button" value="Contacto" class="boton">
             </nav>
         </div>
-    </header>
-    <main class="main_estilo">
-        <div class="titulo_espacios">
-            <div class="titulo">
-                <p>Bienvenido a AnimePage</p>
-            </div>
-        </div>
-        <div class="correo_insert">
-            <p>Inicia sesión</p>
-            <p>Correo electróncio</p>
-            <input type="text" class="email_box">
-        </div>
-        <div class="password_insert">
-            <p>Contraseña</p>
-            <div class="pswd_box">
-                <input type="password">
-                <div class="icon_space">
-                    <button><i class="bi bi-eye"></i></button>
-                </div>
-            </div>
-        </div>
-        <div class="insertar">
-            <div class="log">
-                <a href="./index.html"><input type="button" value="Iniciar" class="boton_log"></a>
-            </div>
-        </div>
-    </main>
-
+    </footer>
 </body>
 
 </html>
