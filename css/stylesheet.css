@@ -143,6 +143,64 @@ section {
     justify-content: flex-end;
   }
 
+  .bajar {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Ocultar el menú por defecto */
+  .bajar_menu {
+    display: none;
+    position: absolute;
+    background-color: #534b67;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  /* Mostrar el menú cuando el botón está en hover o foco */
+  .bajar:hover .bajar_menu,
+  .bajar:focus-within .bajar_menu {
+    display: block;
+  }
+
+  /* Estilos del botón */
+  .bajar_accion {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+  }
+
+  /* Estilos del botón "Cerrar Sesión" */
+  .bajar_items {
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+  }
+
+  .bi-palette {
+    color: black;
+  }
+
+  .bajar_items:hover {
+    color: white;
+  }
+
+  .color-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    top: 100%;
+    left: 0;
+    width: 120px;
+    z-index: 2000;
+  }
+
   button {
     font-size: 1em;
     background-color: #534b6774;
@@ -433,7 +491,7 @@ section {
   }
 
   .nav1 ul,
-  .nav2 ul {
+  .nav2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -701,13 +759,13 @@ section {
   }
 
   button {
-    font-size: 0.8em;
-    background-color: transparent;
-    padding: 0.3em;
+    font-size: 1em;
+    background-color: #534b6774;
+    padding: 0.4em;
     border-radius: 0.5em;
     border: none;
     cursor: pointer;
-    margin-right: 2em;
+    margin-right: 1em;
   }
 
   .nav-logo {
@@ -759,6 +817,51 @@ section {
   .nav2 span {
     display: flex;
     align-items: center;
+  }
+
+  .bajar {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Ocultar el menú por defecto */
+  .bajar_menu {
+    display: none;
+    position: absolute;
+    background-color: #534b67;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+
+  /* Mostrar el menú cuando el botón está en hover o foco */
+  .bajar:hover .bajar_menu,
+  .bajar:focus-within .bajar_menu {
+    display: block;
+  }
+
+  /* Estilos del botón */
+  .bajar_accion {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+  }
+
+  /* Estilos del botón "Cerrar Sesión" */
+  .bajar_items {
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+  }
+
+  .bi-palette {
+    color: black;
+  }
+
+  .bajar_items:hover {
+    color: white;
   }
 
   /* Ajuste de márgenes para evitar solapamientos */
@@ -1021,6 +1124,7 @@ section {
     width: 100%;
     padding-left: 0em;
     padding-right: 0em;
+    padding-top: 0em;
   }
 
   nav {
@@ -1029,5 +1133,65 @@ section {
 
   .display {
     display: none;
+  }
+
+  .Estructura-nav>.nav1 {
+    display: none;
+  }
+
+  .nav2 {
+    position: fixed;
+    bottom: 0%;
+    left: 0;
+    top: auto;
+    height: auto;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    padding: 0.5em 0;
+  }
+
+  .bajar_menu {
+    bottom: 100%;
+  }
+
+  /* Sección de tarjetas */
+  .contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+    padding: 1em;
+    background-color: rgb(192, 179, 222);
+  }
+
+  .expositor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em;
+    justify-content: center;
+  }
+
+  /* Estilos para las tarjetas */
+  .tarjeta {
+    width: 10em;
+    background: #333;
+    color: white;
+    border-radius: 1em;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .tarjeta img {
+    width: 100%;
+    height: 12em;
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
+  }
+
+  .tarjeta h3 {
+    margin: 0.5em 0;
+    font-size: 18px;
   }
 }
