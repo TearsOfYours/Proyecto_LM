@@ -1,0 +1,704 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+}
+
+body {
+  background-color: #8174A0;
+  width: 100%;
+}
+
+.display {
+  display: all;
+}
+
+.display_icons {
+  display: none;
+}
+
+/*NAVEGADOR*/
+nav {
+  font-size: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+nav div {
+  display: flex;
+  gap: 0.6em;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+}
+
+li a {
+  border-radius: 1em;
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+li:hover {
+  background-color: #534b67;
+}
+
+nav li,
+nav span {
+  padding: 0.7em;
+  background-color: #c0b3de;
+  border-radius: 1em;
+}
+
+nav span>input {
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+}
+
+nav i {
+  font-size: 2em;
+  color: #c0b3de;
+}
+
+nav span i {
+  font-size: 1em;
+  color: black;
+}
+
+/*SECCIÓN HERO ASIDE*/
+section {
+  display: flex;
+  width: 100%;
+}
+
+/*Iconos Reproductor de video*/
+
+.contenedor-icono {
+  position: relative;
+  display: inline-block;
+}
+
+.icono-hover {
+  display: none;
+}
+
+/*Un elemento de clase .contenedor-icono + icono-xdefecto,
+si esta por encima, se desabilia*/
+.contenedor-icono:hover .icono-xdefecto {
+  display: none;
+}
+
+/*Un elemento de clase .contenedor-icono + icono-hover,
+si esta por encima, se activa*/
+.contenedor-icono:hover .icono-hover {
+  display: inline-block;
+}
+
+/* Modelo Grande (Para monitores) */
+@media (min-width: 1024px) {
+
+  /*Bordes de pagina web*/
+  .borde {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  /*Estructura del Nav*/
+  .Estructura-nav {
+    display: flex;
+  }
+
+  .nav-logo {
+    height: 3em;
+    /* Ajusta la altura según sea necesario */
+    margin-right: 0.5em;
+    /* Espacio entre la imagen y los enlaces */
+    border-radius: 1em;
+    /* Bordes curvados para que coincida con los enlaces */
+    background-color: rgb(94, 87, 109, 70%);
+    /* Fondo para que coincida con los enlaces */
+    padding: 0.2em;
+    /* Espacio alrededor de la imagen */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sombra para que coincida con los enlaces */
+  }
+
+  .nav1 {
+    align-items: center;
+  }
+
+  .nav1 ul {
+    display: flex;
+    align-items: center;
+    /* Alinea el texto al centro */
+    gap: 1em;
+  }
+
+  .nav2 {
+    justify-content: flex-end;
+  }
+
+  .hero {
+    height: 40em;
+  }
+
+ /* Apartado de reproducción */
+
+ .reproduccion, .seccion-comentarios {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+  margin: 1%;
+}
+
+.fondo-reproduccion{
+  background-color: #c0b3de;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.imagen-contenedor {
+  position: relative;
+}
+
+.imagen {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1em;
+}
+
+.iconos {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  gap: 1em;
+}
+
+.iconos i {
+  font-size: 1.3em;
+  background-color: rgb(83, 75, 103, 0.5);
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em
+}
+
+ /* Apartado de comentarios */
+
+ .seccion-comentarios {
+  display: inline-block;
+  vertical-align: top;
+  width: 35%;
+  height: 50em;
+  margin: 1%;
+  background-color: #c0b3de;
+  padding: 1em;
+  border-radius: 1em;
+  position: relative;
+  right: 0;
+  overflow-y: auto;
+  }
+
+  .publicar-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .lista-comentarios {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 1em;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .usuario {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .imagen-usuario img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+  }
+
+  .acciones-comentario {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 0.5em;
+  }
+
+  .responder {
+    margin-top: 0.5em;
+  }
+
+  .responder p {
+    cursor: pointer;
+    color: blue;
+  }
+
+  .comentario {
+    margin-top: 1em;
+  }
+
+  .caja-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .caja-comentarios .usuario {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .caja-comentarios input {
+    width: 100%;
+    height: 5em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 1px solid #ccc;
+  }
+
+  .boton-comentar {
+    align-self: flex-end;
+    padding: 0.5em 1em;
+    background-color: #534b67;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+
+  /* Clasificación por edades */
+
+  .plus_12 h3 {
+    background-color: #00bcd4 !important;
+    /* Aqua un poco más oscuro */
+    color: #000;
+    border-radius: 0.5em;
+    /* Bordes curvados */
+    padding: 0.2em 0.5em;
+    /* Espacio alrededor del texto */
+    display: inline-block;
+    /* Para que el fondo se ajuste al texto */
+    font-size: clamp(14px, 2vw, 20px);
+    /* Texto responsive */
+  }
+
+  .plus_18 h3 {
+    background-color: #ff0000 !important;
+    /* Rojo */
+    color: #000;
+    border-radius: 0.5em;
+    /* Bordes curvados */
+    padding: 0.2em 0.5em;
+    /* Espacio alrededor del texto */
+    display: inline-block;
+    /* Para que el fondo se ajuste al texto */
+    font-size: clamp(14px, 2vw, 20px);
+    /* Texto responsive */
+  }
+
+  /* Puntaje en estrellas */
+  .puntaje {
+    display: flex;
+    width: 7em;
+    height: 1.5em;
+    background-color: rgb(129, 116, 160, 70%);
+    justify-content: space-around;
+    border-radius: 1em;
+    align-items: center;
+  }
+
+  .puntaje-bordes {
+    padding-top: 1em;
+  }
+
+  /* Categorias */
+
+  .categoria {
+    display: flex;
+    width: 7em;
+    height: 1.5em;
+    background-color: rgb(129, 116, 160, 70%);
+    justify-content: space-around;
+    border-radius: 1em;
+    align-items: center;
+  }
+
+  .categoria-bordes {
+    display: flex;
+    justify-content: flex-start;
+    /* Alinea los elementos al inicio */
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan a la siguiente línea */
+    gap: 1em;
+    /* Aumenta el espacio entre los elementos */
+    padding-top: 1em;
+    width: 25em;
+  }
+
+}
+
+
+/* Modelo Mediano (Para tablets en horizontal) */
+
+@media (max-width: 1024px) {
+
+  /*Estructura del Nav*/
+  .Estructura-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3.8em;
+    background-color: #8174A0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+    padding-left: 0, 5em;
+  }
+
+  .nav-logo {
+    height: 3em;
+    /* Ajusta la altura según sea necesario */
+    margin-right: 0.5em;
+    /* Espacio entre la imagen y los enlaces */
+    border-radius: 1em;
+    /* Bordes curvados para que coincida con los enlaces */
+    background-color: rgb(94, 87, 109, 70%);
+    /* Fondo para que coincida con los enlaces */
+    padding: 0.2em;
+    /* Espacio alrededor de la imagen */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sombra para que coincida con los enlaces */
+  }
+
+  /*Botones de barra de navegación*/
+  /* Quita los botones */
+  .display {
+    display: none;
+  }
+
+  /* Muestra los iconos */
+  .display_icons {
+    display: block;
+  }
+
+  /* Muestra el boton del buscador */
+  .display:last-child {
+    display: block;
+  }
+
+  /* Quita el botón del logo */
+  .display_icons:first-child {
+    display: none;
+  }
+
+  .nav1 ul,
+  .nav2 ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+
+  .nav2 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero {
+    height: 40em;
+  }
+
+  /* Clasificación por edades */
+
+  .plus_12 h3 {
+    background-color: #00bcd4 !important;
+    /* Aqua un poco más oscuro */
+    color: #000;
+    border-radius: 0.5em;
+    /* Bordes curvados */
+    padding: 0.2em 0.5em;
+    /* Espacio alrededor del texto */
+    display: inline-block;
+    /* Para que el fondo se ajuste al texto */
+    font-size: clamp(14px, 2vw, 20px);
+    /* Texto responsive */
+  }
+
+  .plus_18 h3 {
+    background-color: #ff0000 !important;
+    /* Rojo */
+    color: #000;
+    border-radius: 0.5em;
+    /* Bordes curvados */
+    padding: 0.2em 0.5em;
+    /* Espacio alrededor del texto */
+    display: inline-block;
+    /* Para que el fondo se ajuste al texto */
+    font-size: clamp(14px, 2vw, 20px);
+    /* Texto responsive */
+  }
+
+  /* Puntaje en estrellas */
+  .puntaje {
+    display: flex;
+    width: 7em;
+    height: 1.5em;
+    background-color: rgb(129, 116, 160, 70%);
+    justify-content: space-around;
+    border-radius: 1em;
+    align-items: center;
+  }
+
+  .puntaje-bordes {
+    padding-top: 1em;
+  }
+
+  /* Categorias */
+
+  .categoria {
+    display: flex;
+    width: 7em;
+    height: 1.5em;
+    background-color: rgb(129, 116, 160, 70%);
+    justify-content: space-around;
+    border-radius: 1em;
+    align-items: center;
+  }
+
+  .categoria-bordes {
+    display: flex;
+    justify-content: flex-start;
+    /* Alinea los elementos al inicio */
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan a la siguiente línea */
+    gap: 1em;
+    /* Aumenta el espacio entre los elementos */
+    padding-top: 1em;
+    width: 25em;
+  }
+
+}
+
+/* Modelo Normal (Para tablets en vertical) */
+
+@media (max-width: 768px) {
+
+  .borde {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  /*Estructura del Nav*/
+  .Estructura-nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-logo {
+    height: 3em;
+    /* Ajusta la altura según sea necesario */
+    margin-right: 0.5em;
+    /* Espacio entre la imagen y los enlaces */
+    border-radius: 1em;
+    /* Bordes curvados para que coincida con los enlaces */
+    background-color: rgb(94, 87, 109, 70%);
+    /* Fondo para que coincida con los enlaces */
+    padding: 0.2em;
+    /* Espacio alrededor de la imagen */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    /* Sombra para que coincida con los enlaces */
+  }
+
+  .nav1 {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8174A0;
+    z-index: 1000;
+    display: flex;
+    justify-content: start;
+    padding: 0.5em 0;
+  }
+
+  .nav1 ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1em;
+  }
+
+  .nav2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #8174A0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    padding: 0.5em 0;
+  }
+
+  .nav2 span {
+    display: flex;
+    align-items: end;
+  }
+
+  /* Ajuste de márgenes para evitar solapamientos */
+  .hero,
+  .contenedor-principal {
+    margin-top: 0em;
+    /* Ajustar según altura de nav2 */
+    margin-bottom: 0em;
+    /* Ajustar según altura de nav1 */
+  }
+
+  /* Añade los botones Inicio y Mis Listas */
+  .display:nth-child(2) {
+    display: block;
+  }
+
+  .display:nth-child(3) {
+    display: block;
+  }
+
+  /* Deshabilita todos los iconos */
+  .display_icons {
+    display: none;
+  }
+
+  /* Se muestra el buscador */
+  .nav2 .display {
+    display: block;
+  }
+
+  /* Cambiar orden de buscador y hamburger list */
+  .nav2>span {
+    order: 1;
+  }
+
+  /* Clasificación por edades */
+
+  .plus_12 h3 {
+    background-color: #00bcd4 !important;
+    /* Aqua un poco más oscuro */
+    color: #000;
+    border-radius: 0.5em;
+    /* Bordes curvados */
+    padding: 0.2em 0.5em;
+    /* Espacio alrededor del texto */
+    display: inline-block;
+    /* Para que el fondo se ajuste al texto */
+    font-size: clamp(14px, 2vw, 20px);
+    /* Texto responsive */
+  }
+
+  .plus_18 h3 {
+    background-color: #ff0000 !important;
+    /* Rojo */
+    color: #000;
+    border-radius: 0.5em;
+    /* Bordes curvados */
+    padding: 0.2em 0.5em;
+    /* Espacio alrededor del texto */
+    display: inline-block;
+    /* Para que el fondo se ajuste al texto */
+    font-size: clamp(14px, 2vw, 20px);
+    /* Texto responsive */
+  }
+
+  /* Puntaje en estrellas */
+  .puntaje {
+    display: flex;
+    width: 7em;
+    height: 1.5em;
+    background-color: rgb(129, 116, 160, 70%);
+    justify-content: space-around;
+    border-radius: 1em;
+    align-items: center;
+  }
+
+  .puntaje-bordes {
+    padding-top: 1em;
+  }
+
+  /* Categorias */
+
+  .categoria {
+    display: flex;
+    width: 7em;
+    height: 1.5em;
+    background-color: rgb(129, 116, 160, 70%);
+    justify-content: space-around;
+    border-radius: 1em;
+    align-items: center;
+  }
+
+  .categoria-bordes {
+    display: flex;
+    justify-content: flex-start;
+    /* Alinea los elementos al inicio */
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan a la siguiente línea */
+    gap: 1em;
+    /* Aumenta el espacio entre los elementos */
+    padding-top: 1em;
+    width: 25em;
+  }
+
+}
+
+/* Modelo Compacto (Para moviles) */
+
+@media (max-width: 480px) {
+
+  .borde {
+    width: 100%;
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+
+  nav {
+    padding: 1em;
+  }
+
+  .display {
+    display: none;
+  }
+}
