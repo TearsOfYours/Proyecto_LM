@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media(min-width: 1024px) {
+    .foto_perfil {
+        width: 10em;
+        height: 10em;
+    }
+
+    .foto_perfil>img {
+        width: 100%;
+    }
+
+    .perfil {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        background-color: var(--color_mainTrans);
+        border-radius: 1em;
+        padding: 0.4em;
+        gap: 1em;
+        width: 30%;
+    }
+
+    .texto {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .foto_perfil {
+        width: 8em;
+        height: 8em;
+    }
+
+    .foto_perfil>img {
+        width: 100%;
+    }
+
+    .perfil {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        background-color: var(--color_mainTrans);
+        border-radius: 1em;
+        padding: 0.4em;
+        gap: 1em;
+        width: 50%;
+        margin-left: 4em;
+    }
+
+    .texto {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .perfil {
+        margin-top: 5em;
+        margin-left: 0em;
+    }
+    .foto_perfil {
+        width: 6em;
+        height: 6em;
+    }
+
+}
+@media (max-width: 480px) {
+    .perfil {
+        margin-top: 0em;
+        margin-left: 0em;
+    }
+    .foto_perfil {
+        width: 4em;
+        height: 4em;
+    }
+
+}

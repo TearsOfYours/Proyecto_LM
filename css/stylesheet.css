@@ -127,7 +127,6 @@ section {
 
   .nav2 {
     justify-content: flex-end;
-    gap: 1em;
   }
 
   .menu_desplegable {
@@ -165,7 +164,7 @@ section {
   button {
     font-size: 1em;
     background-color: transparent;
-    padding: 0.3em;
+    padding: 0.4em;
     border-radius: 0.5em;
     border: none;
     cursor: pointer;
@@ -344,7 +343,7 @@ section {
     background-color: var(--color_second);
     width: 100%;
   }
-  
+
   .expositor-tarjetas {
     display: flex;
     gap: 1em;
@@ -356,14 +355,18 @@ section {
     white-space: nowrap;
     scrollbar-width: thin;
   }
-  .expositor-tarjetas::-webkit-scrollbar {
-    height: 8px; /* Altura de la barra de desplazamiento */
-}
 
-.expositor-tarjetas::-webkit-scrollbar-thumb {
-  background: var(--color_mainDark); /* Color del scrollbar */
-  border-radius: 4px;
-}
+  .expositor-tarjetas::-webkit-scrollbar {
+    height: 8px;
+    /* Altura de la barra de desplazamiento */
+  }
+
+  .expositor-tarjetas::-webkit-scrollbar-thumb {
+    background: var(--color_mainDark);
+    /* Color del scrollbar */
+    border-radius: 4px;
+  }
+
   /* Estilos para las tarjetas */
   .tarjeta {
     width: 13em;
@@ -392,7 +395,8 @@ section {
     transform: scale(1.05);
     /* Efecto de hover */
   }
-  .listado_espacio{
+
+  .listado_espacio {
     display: flex;
     justify-content: start;
     width: 100%;
@@ -438,6 +442,10 @@ section {
 
   .redes a:visited {
     color: black;
+  }
+
+  a:link {
+    color: black
   }
 
   .redes a:hover {
@@ -681,25 +689,26 @@ section {
     scrollbar-width: thin;
     padding-left: 5em;
   }
+
   .expositor-tarjetas::-webkit-scrollbar {
-    height: 12px; 
-}
+    height: 12px;
+  }
 
-.expositor-tarjetas::-webkit-scrollbar-thumb {
-  background: var(--color_mainDark); 
-  border-radius: 4px;
-}
+  .expositor-tarjetas::-webkit-scrollbar-thumb {
+    background: var(--color_mainDark);
+    border-radius: 4px;
+  }
 
-.tarjeta {
-  width: 13em;
-  background: var(--color_lightDark);
-  color: white;
-  border-radius: 1em;
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.3s ease;
-  flex-shrink: 0;
-}
+  .tarjeta {
+    width: 13em;
+    background: var(--color_lightDark);
+    color: white;
+    border-radius: 1em;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
 
   .tarjeta img {
     width: 100%;
@@ -719,14 +728,31 @@ section {
     /* Efecto de hover */
   }
 
-}
-
-/* Modelo Normal (Para tablets en vertical) */
-
-@media (max-width: 768px) {
-
-  .borde {
+  .listado_espacio {
+    display: flex;
+    justify-content: start;
     width: 100%;
+    padding-left: 4em;
+  }
+
+  .listado {
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    background-color: var(--color_main);
+    width: 10em;
+    font-size: 18px;
+    color: white;
+    padding: 0.6em;
+    border-radius: 1em;
+  }
+
+  .pie {
+    display: flex;
+    gap: 3em;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1em;
     padding-left: 1em;
   }
 
@@ -764,6 +790,9 @@ section {
     font-size: 20px;
   }
 
+  a:link {
+    color: black
+  }
 
 }
 
@@ -795,7 +824,7 @@ section {
   button {
     font-size: 1em;
     background-color: var(--color_mainDarkTrans);
-    padding: 0.3em;
+    padding: 0.4em;
     border-radius: 0.5em;
     border: none;
     cursor: pointer;
@@ -831,12 +860,14 @@ section {
     flex-direction: row;
     justify-content: start;
     padding: 0.5em 0;
+    padding-left: 1em;
   }
 
   .nav2 span {
     display: flex;
     align-items: center;
   }
+
   .menu_desplegable {
     position: relative;
     display: inline-block;
@@ -910,13 +941,15 @@ section {
     padding-left: 0em;
   }
 
-  .listado_espacio{
+  .listado_espacio {
     padding-left: 0em;
   }
+
   .carrusel-texto h2 {
     margin: 0;
     font-size: clamp(20px, 5vw, 36px);
   }
+
   /* Desactivar la seccion de redes y ayuda */
   .pie {
     display: none;
@@ -957,7 +990,9 @@ section {
     z-index: 1000;
     display: flex;
     padding: 0.5em 0;
+    padding-left: 1em;
   }
+
   /* Para que el hamburger list, para que aparezca arriba y no abajo*/
   .menu_accion {
     bottom: 100%;
