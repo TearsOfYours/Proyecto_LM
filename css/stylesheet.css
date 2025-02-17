@@ -12,7 +12,7 @@ input:focus {
 }
 
 body {
-  background-color: #8174A0;
+  background-color: var(--color_main);
   width: 100%;
 }
 
@@ -53,13 +53,13 @@ li a {
 }
 
 li:hover {
-  background-color: #534b67;
+  background-color: var(--color_mainDark);
 }
 
 nav li,
 nav span {
   padding: 0.7em;
-  background-color: #c0b3de;
+  background-color: var(--color_second);
   border-radius: 1em;
 }
 
@@ -71,7 +71,7 @@ nav span>input {
 
 nav i {
   font-size: 2em;
-  color: #c0b3de;
+  color: var(--color_second);
 }
 
 nav span i {
@@ -84,6 +84,7 @@ section {
   display: flex;
   width: 100%;
 }
+
 
 /* Modelo Grande (Para monitores) */
 @media (min-width: 1024px) {
@@ -113,23 +114,9 @@ section {
     display: flex;
   }
 
-  .nav-logo {
-    height: 3em;
-    /* Ajusta la altura según sea necesario */
-    margin-right: 0.5em;
-    /* Espacio entre la imagen y los enlaces */
-    border-radius: 1em;
-    /* Bordes curvados para que coincida con los enlaces */
-    background-color: rgb(94, 87, 109, 70%);
-    /* Fondo para que coincida con los enlaces */
-    padding: 0.2em;
-    /* Espacio alrededor de la imagen */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    /* Sombra para que coincida con los enlaces */
-  }
-
   .nav1 {
     align-items: center;
+    white-space: nowrap;
   }
 
   .nav1 ul {
@@ -149,25 +136,27 @@ section {
   }
 
   /* Ocultar el menú por defecto */
-  .menu_accion{
+  .menu_accion {
     display: none;
     position: absolute;
-    background-color: #534b67;
+    background-color: var(--color_mainDark);
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
 
   /* Mostrar el menú cuando el botón está en hover */
-  .menu_desplegable:hover .menu_accion{
+  .menu_desplegable:hover .menu_accion {
     display: block;
   }
+
   .items {
     display: flex;
     justify-content: center;
     color: black;
     text-decoration: none;
   }
+
   .bi-palette {
     color: black;
   }
@@ -190,29 +179,21 @@ section {
   /* Clasificación por edades */
 
   .plus_12 h3 {
-    background-color: #00bcd4 !important;
-    /* Aqua un poco más oscuro */
-    color: #000;
+    background-color: var(--color_12) !important;
+    color: black;
     border-radius: 0.5em;
-    /* Bordes curvados */
     padding: 0.2em 0.5em;
-    /* Espacio alrededor del texto */
     display: inline-block;
-    /* Para que el fondo se ajuste al texto */
     font-size: clamp(14px, 2vw, 20px);
     /* Texto responsive */
   }
 
   .plus_18 h3 {
-    background-color: #ff0000 !important;
-    /* Rojo */
-    color: #000;
+    background-color: var(--color_18) !important;
+    color: black;
     border-radius: 0.5em;
-    /* Bordes curvados */
     padding: 0.2em 0.5em;
-    /* Espacio alrededor del texto */
     display: inline-block;
-    /* Para que el fondo se ajuste al texto */
     font-size: clamp(14px, 2vw, 20px);
     /* Texto responsive */
   }
@@ -222,7 +203,7 @@ section {
     display: flex;
     width: 7em;
     height: 1.5em;
-    background-color: rgb(129, 116, 160, 70%);
+    background-color: var(--color_mainTrans);
     justify-content: space-around;
     border-radius: 1em;
     align-items: center;
@@ -238,7 +219,7 @@ section {
     display: flex;
     width: 7em;
     height: 1.5em;
-    background-color: rgb(129, 116, 160, 70%);
+    background-color: var(--color_mainTrans);
     justify-content: space-around;
     border-radius: 1em;
     align-items: center;
@@ -247,11 +228,8 @@ section {
   .categoria-bordes {
     display: flex;
     justify-content: flex-start;
-    /* Alinea los elementos al inicio */
     flex-wrap: wrap;
-    /* Permite que los elementos se envuelvan a la siguiente línea */
     gap: 1em;
-    /* Aumenta el espacio entre los elementos */
     padding-top: 1em;
     width: 25em;
   }
@@ -260,7 +238,6 @@ section {
   .carrusel-contenedor {
     width: 100%;
     height: 98%;
-    /* Altura del carrusel (ajusta según tus necesidades) */
     overflow: hidden;
     position: relative;
     margin-bottom: 1em;
@@ -270,7 +247,6 @@ section {
     display: flex;
     position: relative;
     width: 100%;
-    /* Ajusta según el número de elementos */
     height: 100%;
     animation: slide 20s infinite;
     /* Duración de la animación */
@@ -365,27 +341,39 @@ section {
     flex-direction: column;
     gap: 1em;
     padding: 1em;
-    background-color: rgb(192, 179, 222);
+    background-color: var(--color_second);
     width: 100%;
   }
-
+  
   .expositor-tarjetas {
     display: flex;
-    flex-wrap: wrap;
     gap: 1em;
     padding: 1em;
-    justify-content: center;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
   }
+  .expositor-tarjetas::-webkit-scrollbar {
+    height: 8px; /* Altura de la barra de desplazamiento */
+}
 
+.expositor-tarjetas::-webkit-scrollbar-thumb {
+  background: var(--color_mainDark); /* Color del scrollbar */
+  border-radius: 4px;
+}
   /* Estilos para las tarjetas */
   .tarjeta {
     width: 13em;
-    background: #333;
+    background: var(--color_lightDark);
     color: white;
     border-radius: 1em;
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
   }
 
   .tarjeta img {
@@ -404,9 +392,58 @@ section {
     transform: scale(1.05);
     /* Efecto de hover */
   }
+  .listado_espacio{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  }
 
+  .listado {
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    background-color: var(--color_main);
+    width: 11em;
+    font-size: 28px;
+    color: white;
+    padding: 0.6em;
+    border-radius: 1em;
+  }
+
+  .pie {
+    display: flex;
+    gap: 3em;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .info {
+    font-size: 18px;
+    background-color: var(--color_mainDark);
+    border-radius: 1em;
+  }
+
+  .info:hover {
+    background-color: white;
+  }
+
+  .redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    gap: 1em;
+    text-decoration: none;
+  }
+
+  .redes a:visited {
+    color: black;
+  }
+
+  .redes a:hover {
+    color: white;
+  }
 }
-
 
 /* Modelo Mediano (Para tablets en horizontal) */
 
@@ -419,7 +456,7 @@ section {
     left: 0;
     height: 100%;
     width: 3.8em;
-    background-color: #8174A0;
+    background-color: var(--color_main);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -427,20 +464,6 @@ section {
     padding-left: 0, 5em;
   }
 
-  .nav-logo {
-    height: 3em;
-    /* Ajusta la altura según sea necesario */
-    margin-right: 0.5em;
-    /* Espacio entre la imagen y los enlaces */
-    border-radius: 1em;
-    /* Bordes curvados para que coincida con los enlaces */
-    background-color: rgb(94, 87, 109, 70%);
-    /* Fondo para que coincida con los enlaces */
-    padding: 0.2em;
-    /* Espacio alrededor de la imagen */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    /* Sombra para que coincida con los enlaces */
-  }
 
   /*Botones de barra de navegación*/
   /* Quita los botones */
@@ -483,31 +506,21 @@ section {
   /* Clasificación por edades */
 
   .plus_12 h3 {
-    background-color: #00bcd4 !important;
-    /* Aqua un poco más oscuro */
-    color: #000;
+    background-color: var(--color_12) !important;
+    color: black;
     border-radius: 0.5em;
-    /* Bordes curvados */
     padding: 0.2em 0.5em;
-    /* Espacio alrededor del texto */
     display: inline-block;
-    /* Para que el fondo se ajuste al texto */
     font-size: clamp(14px, 2vw, 20px);
-    /* Texto responsive */
   }
 
   .plus_18 h3 {
-    background-color: #ff0000 !important;
-    /* Rojo */
-    color: #000;
+    background-color: var(--color_18) !important;
+    color: black;
     border-radius: 0.5em;
-    /* Bordes curvados */
     padding: 0.2em 0.5em;
-    /* Espacio alrededor del texto */
     display: inline-block;
-    /* Para que el fondo se ajuste al texto */
     font-size: clamp(14px, 2vw, 20px);
-    /* Texto responsive */
   }
 
   /* Puntaje en estrellas */
@@ -515,7 +528,7 @@ section {
     display: flex;
     width: 7em;
     height: 1.5em;
-    background-color: rgb(129, 116, 160, 70%);
+    background-color: var(--color_mainTrans);
     justify-content: space-around;
     border-radius: 1em;
     align-items: center;
@@ -525,26 +538,23 @@ section {
     padding-top: 1em;
   }
 
-  /* Categorias */
-
+  /* Categorias de las películas y series, ranking, tipo de contenido, etc */
   .categoria {
     display: flex;
     width: 7em;
     height: 1.5em;
-    background-color: rgb(129, 116, 160, 70%);
+    background-color: var(--color_mainTrans);
     justify-content: space-around;
     border-radius: 1em;
     align-items: center;
   }
 
+  /* Espaciados de las categorías de las series/películas */
   .categoria-bordes {
     display: flex;
     justify-content: flex-start;
-    /* Alinea los elementos al inicio */
     flex-wrap: wrap;
-    /* Permite que los elementos se envuelvan a la siguiente línea */
     gap: 1em;
-    /* Aumenta el espacio entre los elementos */
     padding-top: 1em;
     width: 25em;
   }
@@ -553,7 +563,6 @@ section {
   .carrusel-contenedor {
     width: 95%;
     height: 100%;
-    /* Altura del carrusel (ajusta según tus necesidades) */
     overflow: hidden;
     position: relative;
     margin-left: 3.8em;
@@ -563,20 +572,19 @@ section {
     display: flex;
     position: relative;
     width: 100%;
-    /* Ajusta según el número de elementos */
     height: 100%;
     animation: slide 20s infinite;
     /* Duración de la animación */
   }
 
+  /* Las imagenes que hay en el carruel */
   .carrusel-objeto {
     flex: 0 0 100%;
-    /* Ajusta para mostrar un elemento a la vez */
     width: 100%;
     height: 100%;
     scroll-snap-align: start;
     position: relative;
-    background-color: #c0b3de;
+    background-color: var(--color_second);
   }
 
   .carrusel-objeto img {
@@ -586,6 +594,7 @@ section {
     display: block;
   }
 
+  /* Margenes y texto del carrusel */
   .carrusel-texto {
     position: absolute;
     top: 0;
@@ -601,6 +610,7 @@ section {
     justify-content: center;
   }
 
+  /* Descripcion de la película */
   .carrusel-texto h2 {
     margin: 0;
     font-size: clamp(20px, 5vw, 36px);
@@ -613,11 +623,9 @@ section {
     font-size: clamp(14px, 3vw, 18px);
     /* Texto responsive */
     word-wrap: break-word;
-    /* Permite que las palabras largas se dividan */
     text-align: left;
     width: 100%;
     max-width: 50%;
-    /* Ajusta el ancho máximo del párrafo */
   }
 
   /* Animación del carrusel */
@@ -658,39 +666,53 @@ section {
     flex-direction: column;
     gap: 1em;
     padding: 1em;
-    background-color: rgb(192, 179, 222);
+    background-color: var(--color_second);
   }
 
   .expositor-tarjetas {
     display: flex;
-    flex-wrap: wrap;
     gap: 1em;
     padding: 1em;
-    justify-content: center;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    padding-left: 5em;
   }
+  .expositor-tarjetas::-webkit-scrollbar {
+    height: 12px; 
+}
 
-  /* Estilos para las tarjetas */
-  .tarjeta {
-    width: 13em;
-    background: #333;
-    color: white;
-    border-radius: 1em;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
+.expositor-tarjetas::-webkit-scrollbar-thumb {
+  background: var(--color_mainDark); 
+  border-radius: 4px;
+}
+
+.tarjeta {
+  width: 13em;
+  background: var(--color_lightDark);
+  color: white;
+  border-radius: 1em;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
 
   .tarjeta img {
     width: 100%;
-    height: 20em;
+    height: 16em;
     object-fit: cover;
     /* Ajusta la imagen sin deformarla */
   }
 
   .tarjeta h3 {
     margin: 0.5em 0;
-    font-size: 18px;
+    font-size: 16px;
   }
+
 
   .tarjeta:hover {
     transform: scale(1.05);
@@ -706,10 +728,50 @@ section {
   .borde {
     width: 100%;
     padding-left: 1em;
-    padding-right: 1em;
   }
 
-  /*Estructura del Nav*/
+  .info {
+    font-size: 18px;
+    background-color: var(--color_mainDark);
+    border-radius: 1em;
+    padding: 0.5em;
+  }
+
+  .info:hover {
+    background-color: white;
+  }
+
+  .redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    gap: 1em;
+    text-decoration: none;
+  }
+
+  .redes a:visited {
+    color: black;
+  }
+
+  .redes a:hover {
+    color: white;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+  }
+
+
+}
+
+/* Modelo Normal (Para tablets en vertical) */
+
+@media (max-width: 768px) {
+
+  /*Estructura del Nav restablecido*/
   .Estructura-nav {
     position: relative;
     width: 100%;
@@ -732,7 +794,7 @@ section {
 
   button {
     font-size: 1em;
-    background-color: transparent;
+    background-color: var(--color_mainDarkTrans);
     padding: 0.3em;
     border-radius: 0.5em;
     border: none;
@@ -740,27 +802,12 @@ section {
     margin-right: 1em;
   }
 
-  .nav-logo {
-    height: 3em;
-    /* Ajusta la altura según sea necesario */
-    margin-right: 0.5em;
-    /* Espacio entre la imagen y los enlaces */
-    border-radius: 1em;
-    /* Bordes curvados para que coincida con los enlaces */
-    background-color: rgb(94, 87, 109, 70%);
-    /* Fondo para que coincida con los enlaces */
-    padding: 0.2em;
-    /* Espacio alrededor de la imagen */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    /* Sombra para que coincida con los enlaces */
-  }
-
   .nav1 {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #8174A0;
+    background-color: var(--color_main);
     z-index: 1000;
     display: flex;
     justify-content: start;
@@ -778,7 +825,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #8174A0;
+    background-color: var(--color_main);
     z-index: 1000;
     display: flex;
     flex-direction: row;
@@ -796,27 +843,18 @@ section {
   }
 
   /* Ocultar el menú por defecto */
-  .menu_accion{
+  .menu_accion {
     display: none;
     position: absolute;
-    background-color: #534b67;
-    border: 1px solid #ccc;
+    background-color: var(--color_mainDark);
+    border: 1px solid white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
 
   /* Mostrar el menú cuando el botón está en hover o foco */
-  .menu_desplegable:hover .menu_accion{
+  .menu_desplegable:hover .menu_accion {
     display: block;
-  }
-  .items {
-    display: flex;
-    justify-content: center;
-    color: black;
-    text-decoration: none;
-  }
-  .bi-palette {
-    color: black;
   }
 
   .items:hover {
@@ -856,221 +894,32 @@ section {
     order: 1;
   }
 
-  /* Clasificación por edades */
-
-  .plus_12 h3 {
-    background-color: #00bcd4 !important;
-    /* Aqua un poco más oscuro */
-    color: #000;
-    border-radius: 0.5em;
-    /* Bordes curvados */
-    padding: 0.2em 0.5em;
-    /* Espacio alrededor del texto */
-    display: inline-block;
-    /* Para que el fondo se ajuste al texto */
-    font-size: clamp(14px, 2vw, 20px);
-    /* Texto responsive */
-  }
-
-  .plus_18 h3 {
-    background-color: #ff0000 !important;
-    /* Rojo */
-    color: #000;
-    border-radius: 0.5em;
-    /* Bordes curvados */
-    padding: 0.2em 0.5em;
-    /* Espacio alrededor del texto */
-    display: inline-block;
-    /* Para que el fondo se ajuste al texto */
-    font-size: clamp(14px, 2vw, 20px);
-    /* Texto responsive */
-  }
-
-  /* Puntaje en estrellas */
+  /* Estrellas más pequeñas */
   .puntaje {
-    display: flex;
-    width: 7em;
-    height: 1.5em;
-    background-color: rgb(129, 116, 160, 70%);
-    justify-content: space-around;
-    border-radius: 1em;
-    align-items: center;
+    font-size: 14px;
   }
 
-  .puntaje-bordes {
-    padding-top: 1em;
-  }
-
-  /* Categorias */
-
-  .categoria {
-    display: flex;
-    width: 7em;
-    height: 1.5em;
-    background-color: rgb(129, 116, 160, 70%);
-    justify-content: space-around;
-    border-radius: 1em;
-    align-items: center;
-  }
-
-  .categoria-bordes {
-    display: flex;
-    justify-content: flex-start;
-    /* Alinea los elementos al inicio */
-    flex-wrap: wrap;
-    /* Permite que los elementos se envuelvan a la siguiente línea */
-    gap: 1em;
-    /* Aumenta el espacio entre los elementos */
-    padding-top: 1em;
-    width: 25em;
-  }
-
-  /* Contenedor del carrusel */
+  /* Contenedor del carrusel corregido */
   .carrusel-contenedor {
     width: 100%;
     height: 100%;
-    /* Altura del carrusel (ajusta según tus necesidades) */
-    overflow: hidden;
-    position: relative;
     margin-left: 0em;
   }
 
-  .carrusel {
-    display: flex;
-    position: relative;
-    width: 100%;
-    /* Ajusta según el número de elementos */
-    height: 100%;
-    animation: slide 20s infinite;
-    /* Duración de la animación */
+  .expositor-tarjetas {
+    padding-left: 0em;
   }
 
-  .carrusel-objeto {
-    flex: 0 0 100%;
-    /* Ajusta para mostrar un elemento a la vez */
-    width: 100%;
-    height: 100%;
-    scroll-snap-align: start;
-    position: relative;
-    background-color: #c0b3de;
+  .listado_espacio{
+    padding-left: 0em;
   }
-
-  .carrusel-objeto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .carrusel-texto {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 8), rgba(0, 0, 0, 0));
-    color: white;
-    padding: 1em;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   .carrusel-texto h2 {
     margin: 0;
     font-size: clamp(20px, 5vw, 36px);
-    /* Texto responsive */
   }
-
-  .carrusel-texto p {
-    padding-bottom: 1em;
-    margin: 0.5em 0 0;
-    font-size: clamp(14px, 3vw, 18px);
-    /* Texto responsive */
-    word-wrap: break-word;
-    /* Permite que las palabras largas se dividan */
-    text-align: left;
-    width: 100%;
-    max-width: 50%;
-    /* Ajusta el ancho máximo del párrafo */
-  }
-
-  /* Animación del carrusel */
-  @keyframes slide {
-    0% {
-      transform: translateX(0%);
-    }
-
-    25% {
-      transform: translateX(0%);
-    }
-
-    33.33% {
-      transform: translateX(-100%);
-    }
-
-    58.33% {
-      transform: translateX(-100%);
-    }
-
-    66.66% {
-      transform: translateX(-200%);
-    }
-
-    91.66% {
-      transform: translateX(-200%);
-    }
-
-    100% {
-      transform: translateX(0%);
-    }
-  }
-
-
-  /* Sección de tarjetas */
-  .contenedor-principal {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding: 1em;
-    background-color: rgb(192, 179, 222);
-  }
-
-  .expositor-tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    padding: 1em;
-    justify-content: center;
-  }
-
-  /* Estilos para las tarjetas */
-  .tarjeta {
-    width: 13em;
-    background: #333;
-    color: white;
-    border-radius: 1em;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
-
-  .tarjeta img {
-    width: 100%;
-    height: 20em;
-    object-fit: cover;
-    /* Ajusta la imagen sin deformarla */
-  }
-
-  .tarjeta h3 {
-    margin: 0.5em 0;
-    font-size: 18px;
-  }
-
-  .tarjeta:hover {
-    transform: scale(1.05);
-    /* Efecto de hover */
+  /* Desactivar la seccion de redes y ayuda */
+  .pie {
+    display: none;
   }
 
 }
@@ -1109,48 +958,26 @@ section {
     display: flex;
     padding: 0.5em 0;
   }
-
-  .bajar_menu {
+  /* Para que el hamburger list, para que aparezca arriba y no abajo*/
+  .menu_accion {
     bottom: 100%;
-  }
-
-  /* Sección de tarjetas */
-  .contenedor-principal {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6em;
-    padding: 1em;
-    background-color: rgb(192, 179, 222);
-  }
-
-  .expositor-tarjetas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    padding: 1em;
-    justify-content: center;
   }
 
   /* Estilos para las tarjetas */
   .tarjeta {
-    width: 10em;
-    background: #333;
-    color: white;
-    border-radius: 1em;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
+    width: 6em;
   }
 
   .tarjeta img {
-    width: 100%;
     height: 12em;
-    object-fit: cover;
-    /* Ajusta la imagen sin deformarla */
   }
 
   .tarjeta h3 {
-    margin: 0.5em 0;
-    font-size: 18px;
+    font-size: 12px;
   }
+
+  .pie {
+    display: none;
+  }
+
 }
