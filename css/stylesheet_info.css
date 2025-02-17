@@ -489,13 +489,12 @@ si esta por encima, se activa*/
     display: none;
   }
 
-  /* Muestra los iconos */
-  .display_icons {
-    display: block;
+  .contenedor-busqueda {
+    display: none;
   }
 
-  /* Muestra el boton del buscador */
-  .display:last-child {
+  /* Muestra los iconos */
+  .display_icons {
     display: block;
   }
 
@@ -846,6 +845,46 @@ si esta por encima, se activa*/
     align-items: end;
   }
 
+  .menu_desplegable {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Ocultar el menú por defecto */
+  .menu_accion{
+    display: none;
+    position: absolute;
+    background-color: #534b67;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  /* Mostrar el menú cuando el botón está en hover */
+  .menu_desplegable:hover .menu_accion{
+    display: block;
+  }
+  .items {
+    display: flex;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+  }
+  .bi-palette {
+    color: black;
+  }
+
+
+  button {
+    font-size: 1em;
+    background-color: transparent;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    margin-right: 1em;
+  }
+
   /* Ajuste de márgenes para evitar solapamientos */
   .hero,
   .contenedor-principal {
@@ -855,13 +894,19 @@ si esta por encima, se activa*/
     /* Ajustar según altura de nav1 */
   }
 
-  /* Añade los botones Inicio y Mis Listas */
+  /* Añade los botones Inicio Mis Listas */
   .display:nth-child(2) {
     display: block;
   }
 
   .display:nth-child(3) {
     display: block;
+  }
+
+  /* Deshabilita los Comentarios */
+
+  .seccion-comentarios {
+    display: none;
   }
 
   /* Deshabilita todos los iconos */
@@ -877,6 +922,73 @@ si esta por encima, se activa*/
   /* Cambiar orden de buscador y hamburger list */
   .nav2>span {
     order: 1;
+  }
+
+ /* Apartado de reproducción */
+
+ .reproduccion {
+  display: inline-block;
+  vertical-align: top;
+  width: 80%;
+}
+
+.fondo-reproduccion{
+  background-color: rgb(192, 179, 222);
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.imagen-contenedor {
+  position: relative;
+}
+
+.imagen {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1em;
+}
+
+.iconos {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  gap: 1em;
+}
+
+.iconos i {
+  font-size: 1.3em;
+  background-color: rgb(83, 75, 103, 0.5);
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em
+}
+
+  /* Apartado de información */
+
+  .titulo-reproduccion{
+    font-size: 18px; 
+    font-weight: bold;
+    color: #534b67; 
+    text-align: start; 
+    margin: 0.5em 0; 
+    padding: 0.5em; 
+    background-color: rgba(192, 179, 222, 0.5); 
+    border-radius: 1em; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    display: inline-block;  
+  }
+
+  .contenedor-categorias{
+    gap: 1em;
+    padding-top: 1em;
+  }
+
+  .sinopsis {
+    padding: 1em;
+    border-radius: 1em;
+    margin-top: 1em;
   }
 
   /* Clasificación por edades */
@@ -930,7 +1042,7 @@ si esta por encima, se activa*/
     display: flex;
     width: 7em;
     height: 1.5em;
-    background-color: rgb(129, 116, 160, 70%);
+    background-color: rgba(129, 116, 160, 0.7);
     justify-content: space-around;
     border-radius: 1em;
     align-items: center;
@@ -939,13 +1051,32 @@ si esta por encima, se activa*/
   .categoria-bordes {
     display: flex;
     justify-content: flex-start;
-    /* Alinea los elementos al inicio */
     flex-wrap: wrap;
-    /* Permite que los elementos se envuelvan a la siguiente línea */
     gap: 1em;
-    /* Aumenta el espacio entre los elementos */
     padding-top: 1em;
-    width: 25em;
+  }
+
+  .categoria h3 {
+    font-size: 1em;
+    color: #000;
+  }
+
+  .año-salida h2{
+    background-color: #381b46;
+    color: #e1d0e8;
+    border-radius: 0.5em;
+    padding: 0.2em 0.5em;
+    display: inline-block;
+    font-size: clamp(14px, 2vw, 20px);
+  }
+
+  .capitulos h4{
+    background-color: #381b46;
+    color: #e1d0e8;
+    border-radius: 0.5em;
+    padding: 0.2em 0.5em;
+    display: inline-block;
+    font-size: clamp(14px, 2vw, 20px);
   }
 
 }

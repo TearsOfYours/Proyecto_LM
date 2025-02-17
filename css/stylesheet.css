@@ -732,8 +732,8 @@ section {
 
   button {
     font-size: 1em;
-    background-color: #534b6774;
-    padding: 0.4em;
+    background-color: transparent;
+    padding: 0.3em;
     border-radius: 0.5em;
     border: none;
     cursor: pointer;
