@@ -85,14 +85,6 @@ section {
   width: 100%;
 }
 
-.nav-logo {
-  height: 3em;
-  margin-right: 0.5em;
-  border-radius: 1em;
-  background-color: #5e576db3;
-  padding: 0.2em;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
 
 /* Modelo Grande (Para monitores) */
 @media (min-width: 1024px) {
@@ -351,15 +343,26 @@ section {
     background-color: var(--color_second);
     width: 100%;
   }
-
+  
   .expositor-tarjetas {
     display: flex;
-    flex-wrap: wrap;
     gap: 1em;
     padding: 1em;
-    justify-content: center;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
   }
+  .expositor-tarjetas::-webkit-scrollbar {
+    height: 8px; /* Altura de la barra de desplazamiento */
+}
 
+.expositor-tarjetas::-webkit-scrollbar-thumb {
+  background: var(--color_mainDark); /* Color del scrollbar */
+  border-radius: 4px;
+}
   /* Estilos para las tarjetas */
   .tarjeta {
     width: 13em;
@@ -369,6 +372,7 @@ section {
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
+    flex-shrink: 0;
   }
 
   .tarjeta img {
@@ -386,6 +390,23 @@ section {
   .tarjeta:hover {
     transform: scale(1.05);
     /* Efecto de hover */
+  }
+  .listado_espacio{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  }
+
+  .listado {
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    background-color: var(--color_main);
+    width: 11em;
+    font-size: 28px;
+    color: white;
+    padding: 0.6em;
+    border-radius: 1em;
   }
 
   .pie {
@@ -434,7 +455,7 @@ section {
     left: 0;
     height: 100%;
     width: 3.8em;
-    background-color: #8174A0;
+    background-color: var(--color_main);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -649,22 +670,35 @@ section {
 
   .expositor-tarjetas {
     display: flex;
-    flex-wrap: wrap;
     gap: 1em;
     padding: 1em;
-    justify-content: center;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    padding-left: 5em;
   }
+  .expositor-tarjetas::-webkit-scrollbar {
+    height: 12px; 
+}
 
-  /* Estilos para las tarjetas */
-  .tarjeta {
-    width: 9em;
-    background: var(--color_lightDark);
-    color: white;
-    border-radius: 1em;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-  }
+.expositor-tarjetas::-webkit-scrollbar-thumb {
+  background: var(--color_mainDark); 
+  border-radius: 4px;
+}
+
+.tarjeta {
+  width: 13em;
+  background: var(--color_lightDark);
+  color: white;
+  border-radius: 1em;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
 
   .tarjeta img {
     width: 100%;
@@ -682,6 +716,25 @@ section {
   .tarjeta:hover {
     transform: scale(1.05);
     /* Efecto de hover */
+  }
+
+  .listado_espacio{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    padding-left: 4em;
+  }
+  
+  .listado {
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    background-color: var(--color_main);
+    width: 10em;
+    font-size: 18px;
+    color: white;
+    padding: 0.6em;
+    border-radius: 1em;
   }
 
   .pie {
@@ -869,6 +922,13 @@ section {
     margin-left: 0em;
   }
 
+  .expositor-tarjetas {
+    padding-left: 0em;
+  }
+
+  .listado_espacio{
+    padding-left: 0em;
+  }
   .carrusel-texto h2 {
     margin: 0;
     font-size: clamp(20px, 5vw, 36px);
