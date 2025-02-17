@@ -153,6 +153,7 @@ si esta por encima, se activa*/
     display: flex;
     align-items: center;
     gap: 1em;
+    white-space: nowrap;
   }
 
   .nav2 {
@@ -278,7 +279,7 @@ si esta por encima, se activa*/
   display: inline-block;
   vertical-align: top;
   width: 35%;
-  height: 48em;
+  height: 53em;
   margin: 1%;
   background-color: #c0b3de;
   padding: 1em;
@@ -596,10 +597,10 @@ si esta por encima, se activa*/
   display: inline-block;
   vertical-align: top;
   width: 35%;
-  height: 38em;
+  height: 39.9em;
   margin: 1%;
   background-color: #c0b3de;
-  padding: 1em;
+  padding: 1em; 
   border-radius: 1em;
   position: relative;
   right: 0;
@@ -1118,6 +1119,36 @@ si esta por encima, se activa*/
     margin-top: 3em;
     margin-left:-2.5em;
   }
+
+  .fondo-reproduccion{
+    background-color: rgb(192, 179, 222);
+    padding: 1em;
+    border-radius: 1em;
+    margin-left: 5em;
+  }
+  
+  .imagen {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1em;
+  }
+  
+    /* Apartado de información */
+  
+    .titulo-reproduccion{
+      font-size: 18px; 
+      font-weight: bold;
+      color: #534b67; 
+      text-align: start; 
+      margin: 0.5em 0; 
+      padding: 0.5em; 
+      background-color: rgba(192, 179, 222, 0.5); 
+      border-radius: 1em; 
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+      display: inline-block;  
+    }
+
 
   /* Para que el hamburger list, para que aparezca arriba y no abajo*/
   .menu_accion {
