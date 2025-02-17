@@ -17,13 +17,18 @@ body {
 }
 
 .display {
-  display: all;
+  display: block;
 }
 
 .display_icons {
   display: none;
 }
 
+.bi-bookmark-heart-fill:hover,
+.bi-house:hover,
+.bi-calendar-fill:hover {
+    color: var(--color_mainDark);
+}
 /*NAVEGADOR*/
 nav {
   font-size: 21px;
