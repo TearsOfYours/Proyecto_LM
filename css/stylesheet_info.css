@@ -786,7 +786,7 @@ si esta por encima, se activa*/
     padding-right: 1em;
   }
 
-  /*Estructura del Nav*/
+  /*Estructura del Nav restablecido*/
   .Estructura-nav {
     position: relative;
     width: 100%;
@@ -794,19 +794,27 @@ si esta por encima, se activa*/
     flex-direction: column;
   }
 
-  .nav-logo {
-    height: 3em;
-    /* Ajusta la altura según sea necesario */
-    margin-right: 0.5em;
-    /* Espacio entre la imagen y los enlaces */
+  .contenedor-busqueda {
+    display: flex;
+    align-items: center;
+    width: 3em;
     border-radius: 1em;
-    /* Bordes curvados para que coincida con los enlaces */
-    background-color: rgb(94, 87, 109, 70%);
-    /* Fondo para que coincida con los enlaces */
-    padding: 0.2em;
-    /* Espacio alrededor de la imagen */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    /* Sombra para que coincida con los enlaces */
+    overflow: hidden;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .contenedor-busqueda:focus-within {
+    width: 15em;
+  }
+
+  button {
+    font-size: 1em;
+    background-color: var(--color_mainDarkTrans);
+    padding: 0.4em;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+    margin-right: 1em;
   }
 
   .nav1 {
@@ -814,7 +822,7 @@ si esta por encima, se activa*/
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #8174A0;
+    background-color: var(--color_main);
     z-index: 1000;
     display: flex;
     justify-content: start;
@@ -832,7 +840,7 @@ si esta por encima, se activa*/
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #8174A0;
+    background-color: var(--color_main);
     z-index: 1000;
     display: flex;
     flex-direction: row;
@@ -842,47 +850,30 @@ si esta por encima, se activa*/
 
   .nav2 span {
     display: flex;
-    align-items: end;
+    align-items: center;
   }
-
   .menu_desplegable {
     position: relative;
     display: inline-block;
   }
 
   /* Ocultar el menú por defecto */
-  .menu_accion{
-    display: none;
+  .menu_accion {
+    display: none !important;
     position: absolute;
-    background-color: #534b67;
-    border: 1px solid #ccc;
+    background-color: var(--color_mainDark);
+    border: 1px solid white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
   }
 
-  /* Mostrar el menú cuando el botón está en hover */
-  .menu_desplegable:hover .menu_accion{
-    display: block;
-  }
-  .items {
-    display: flex;
-    justify-content: center;
-    color: black;
-    text-decoration: none;
-  }
-  .bi-palette {
-    color: black;
+  /* Mostrar el menú cuando el botón está en hover o foco */
+  .menu_desplegable:hover .menu_accion {
+    display: block !important;
   }
 
-
-  button {
-    font-size: 1em;
-    background-color: transparent;
-    padding: 0.3em;
-    border-radius: 0.5em;
-    border: none;
-    cursor: pointer;
-    margin-right: 1em;
+  .items:hover {
+    color: white;
   }
 
   /* Ajuste de márgenes para evitar solapamientos */
@@ -894,7 +885,7 @@ si esta por encima, se activa*/
     /* Ajustar según altura de nav1 */
   }
 
-  /* Añade los botones Inicio Mis Listas */
+  /* Añade los botones Inicio y Mis Listas */
   .display:nth-child(2) {
     display: block;
   }
@@ -902,8 +893,6 @@ si esta por encima, se activa*/
   .display:nth-child(3) {
     display: block;
   }
-
-  /* Deshabilita los Comentarios */
 
   .seccion-comentarios {
     display: none;
@@ -924,38 +913,45 @@ si esta por encima, se activa*/
     order: 1;
   }
 
+  /* Desactivar la seccion de redes y ayuda */
+  .pie {
+    display: none;
+  }
+
  /* Apartado de reproducción */
 
- .reproduccion {
-  display: inline-block;
-  vertical-align: top;
-  width: 80%;
-}
+  .reproduccion {
+    display: inline-block;
+    vertical-align: top;
+    width: 90%;
+    margin-top: 6em;
+    margin-left:-0.5em;
+  }
 
-.fondo-reproduccion{
-  background-color: rgb(192, 179, 222);
-  padding: 1em;
-  border-radius: 1em;
-}
+  .fondo-reproduccion{
+    background-color: rgb(192, 179, 222);
+    padding: 1em;
+    border-radius: 1em;
+  }
 
-.imagen-contenedor {
-  position: relative;
-}
+  .imagen-contenedor {
+    position: relative;
+  }
 
-.imagen {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 1em;
-}
+  .imagen {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1em;
+  }
 
-.iconos {
-  position: absolute;
-  bottom: 1em;
-  left: 50%;
-  transform: translate(-50%);
-  display: flex;
-  gap: 1em;
+  .iconos {
+    position: absolute;
+    bottom: 1em;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    gap: 1em;
 }
 
 .iconos i {
@@ -1009,16 +1005,11 @@ si esta por encima, se activa*/
 
   .plus_18 h3 {
     background-color: #ff0000 !important;
-    /* Rojo */
     color: #000;
     border-radius: 0.5em;
-    /* Bordes curvados */
     padding: 0.2em 0.5em;
-    /* Espacio alrededor del texto */
     display: inline-block;
-    /* Para que el fondo se ajuste al texto */
     font-size: clamp(14px, 2vw, 20px);
-    /* Texto responsive */
   }
 
   /* Puntaje en estrellas */
@@ -1027,9 +1018,11 @@ si esta por encima, se activa*/
     width: 7em;
     height: 1.5em;
     background-color: rgb(129, 116, 160, 70%);
-    justify-content: space-around;
+    justify-content: space-between;
     border-radius: 1em;
     align-items: center;
+    padding: 0.2em 0.5em;
+
   }
 
   .puntaje-bordes {
@@ -1089,6 +1082,7 @@ si esta por encima, se activa*/
     width: 100%;
     padding-left: 0em;
     padding-right: 0em;
+    padding-top: 0em;
   }
 
   nav {
@@ -1098,4 +1092,48 @@ si esta por encima, se activa*/
   .display {
     display: none;
   }
+
+  .Estructura-nav>.nav1 {
+    display: none;
+  }
+
+  .nav2 {
+    position: fixed;
+    bottom: 0%;
+    left: 0;
+    top: auto;
+    height: auto;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    padding: 0.5em 0;
+  }
+
+   /* Apartado de reproducción */
+
+   .reproduccion {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin-top: 3em;
+    margin-left:-2.5em;
+  }
+
+  /* Para que el hamburger list, para que aparezca arriba y no abajo*/
+  .menu_accion {
+    bottom: 100%;
+  }
+
+  .sinopsis{
+    display: none;
+  }
+
+  .contenedor-categorias {
+    display: none;
+  }
+
+  .pie {
+    display: none;
+  }
+
 }
