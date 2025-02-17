@@ -139,20 +139,13 @@ si esta por encima, se activa*/
 
   .nav-logo {
     height: 3em;
-    /* Ajusta la altura según sea necesario */
     margin-right: 0.5em;
-    /* Espacio entre la imagen y los enlaces */
     border-radius: 1em;
-    /* Bordes curvados para que coincida con los enlaces */
     background-color: rgb(94, 87, 109, 70%);
-    /* Fondo para que coincida con los enlaces */
     padding: 0.2em;
-    /* Espacio alrededor de la imagen */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    /* Sombra para que coincida con los enlaces */
-  }
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);  }
 
-  .nav1 {
+    .nav1 {
     align-items: center;
   }
 
@@ -254,6 +247,19 @@ si esta por encima, se activa*/
 }
 
   /* Apartado de información */
+
+  .titulo-reproduccion{
+    font-size: 18px; 
+    font-weight: bold;
+    color: #534b67; 
+    text-align: start; 
+    margin: 0.5em 0; 
+    padding: 0.5em; 
+    background-color: rgba(192, 179, 222, 0.5); 
+    border-radius: 1em; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    display: inline-block;  
+  }
 
   .contenedor-categorias{
     gap: 1em;
@@ -516,6 +522,171 @@ si esta por encima, se activa*/
     height: 40em;
   }
 
+ /* Apartado de reproducción */
+
+ .reproduccion, .seccion-comentarios {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+  margin: 1%;
+}
+
+.fondo-reproduccion{
+  background-color: rgb(192, 179, 222);
+  padding: 1em;
+  border-radius: 1em;
+  margin-left: 5em;
+}
+
+.imagen-contenedor {
+  position: relative;
+}
+
+.imagen {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1em;
+}
+
+.iconos {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  gap: 1em;
+}
+
+.iconos i {
+  font-size: 1.3em;
+  background-color: rgb(83, 75, 103, 0.5);
+  border-radius: 0.5em;
+  padding: 0.2em 0.5em
+}
+
+  /* Apartado de información */
+
+  .titulo-reproduccion{
+    font-size: 18px; 
+    font-weight: bold;
+    color: #534b67; 
+    text-align: start; 
+    margin: 0.5em 0; 
+    padding: 0.5em; 
+    background-color: rgba(192, 179, 222, 0.5); 
+    border-radius: 1em; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    display: inline-block;  
+  }
+
+  .contenedor-categorias{
+    gap: 1em;
+    padding-top: 1em;
+  }
+
+  .sinopsis {
+    padding: 1em;
+    border-radius: 1em;
+    margin-top: 1em;
+  }
+
+ /* Apartado de comentarios */
+
+ .seccion-comentarios {
+  display: inline-block;
+  vertical-align: top;
+  width: 35%;
+  height: 38em;
+  margin: 1%;
+  background-color: #c0b3de;
+  padding: 1em;
+  border-radius: 1em;
+  position: relative;
+  right: 0;
+  overflow-y: auto;
+  }
+
+  .publicar-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .lista-comentarios {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 1em;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .usuario {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .imagen-usuario img {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+  }
+
+  .acciones-comentario {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 0.5em;
+  }
+
+  .responder {
+    margin-top: 0.5em;
+  }
+
+  .responder p {
+    cursor: pointer;
+    color: blue;
+  }
+
+  .comentario {
+    margin-top: 1em;
+  }
+
+  .caja-comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .caja-comentarios .usuario {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .caja-comentarios input {
+    width: 100%;
+    height: 5em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: 1px solid #ccc;
+  }
+
+  .boton-comentar {
+    align-self: flex-end;
+    padding: 0.5em 1em;
+    background-color: #534b67;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+  }
+
   /* Clasificación por edades */
 
   .plus_12 h3 {
@@ -567,7 +738,7 @@ si esta por encima, se activa*/
     display: flex;
     width: 7em;
     height: 1.5em;
-    background-color: rgb(129, 116, 160, 70%);
+    background-color: rgba(129, 116, 160, 0.7);
     justify-content: space-around;
     border-radius: 1em;
     align-items: center;
@@ -576,13 +747,32 @@ si esta por encima, se activa*/
   .categoria-bordes {
     display: flex;
     justify-content: flex-start;
-    /* Alinea los elementos al inicio */
     flex-wrap: wrap;
-    /* Permite que los elementos se envuelvan a la siguiente línea */
     gap: 1em;
-    /* Aumenta el espacio entre los elementos */
     padding-top: 1em;
-    width: 25em;
+  }
+
+  .categoria h3 {
+    font-size: 1em;
+    color: #000;
+  }
+
+  .año-salida h2{
+    background-color: #381b46;
+    color: #e1d0e8;
+    border-radius: 0.5em;
+    padding: 0.2em 0.5em;
+    display: inline-block;
+    font-size: clamp(14px, 2vw, 20px);
+  }
+
+  .capitulos h4{
+    background-color: #381b46;
+    color: #e1d0e8;
+    border-radius: 0.5em;
+    padding: 0.2em 0.5em;
+    display: inline-block;
+    font-size: clamp(14px, 2vw, 20px);
   }
 
 }
